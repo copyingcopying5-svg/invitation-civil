@@ -1,7 +1,35 @@
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { supabase } from "../lib/supabase";
 import invitationImage from "../assets/img_3.jpg";
 
 function InvitationMessage() {
+  const [guestName, setGuestName] = useState("");
+
+  useEffect(() => {
+    const fetchGuest = async () => {
+      const params = new URLSearchParams(window.location.search);
+      const guestId = params.get("guest");
+
+      if (!guestId) return;
+
+      const { data, error } = await supabase
+        .from("guests")
+        .select("nom")
+        .eq("guest_id", guestId)
+        .single();
+
+      if (error) {
+        console.error("Erreur récupération invité :", error);
+        return;
+      }
+
+      setGuestName(data.nom);
+    };
+
+    fetchGuest();
+  }, []);
+
   return (
     <section
       id="invitation"
@@ -37,6 +65,36 @@ function InvitationMessage() {
           transition={{ duration: 0.8 }}
           className="max-w-3xl mx-auto text-center mt-14 md:mt-20"
         >
+
+          {/* Nom de l'invité */}
+          {guestName && (
+            <div className="mb-10">
+              <p className="
+                font-['Poppins']
+                text-[13px]
+                md:text-[15px]
+                tracking-[0.2em]
+                uppercase
+                text-[#A38D87]
+                mb-3
+              ">
+                Vous êtes invité(e)
+              </p>
+
+              <h3 className="
+                font-['Cormorant_Garamond']
+                text-[28px]
+                md:text-[38px]
+                font-semibold
+                text-[#8F7771]
+              ">
+                {guestName}
+              </h3>
+
+              <div className="w-16 h-[1px] bg-[#A38D87] mx-auto mt-5" />
+            </div>
+          )}
+
           <p
             className="
               font-['Poppins']
@@ -65,8 +123,8 @@ function InvitationMessage() {
             Venez vivre à nos côtés ces précieux instants de joie,
             d'amour et de célébration.
           </p>
-        </motion.div>
 
+        </motion.div>
       </div>
     </section>
   );

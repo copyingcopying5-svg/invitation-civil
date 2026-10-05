@@ -128,10 +128,7 @@ function App() {
             <Location />
             <Programme />
             <Event />
-            <QRCodeSection
-              guestName="Jean-Pierre"
-              tableNumber="12"
-            />
+            <QRCodeSection />
             <Gallery />
           </main>
         </>
