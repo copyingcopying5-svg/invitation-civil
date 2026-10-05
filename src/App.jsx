@@ -14,6 +14,7 @@ import InvitationMessage from "./components/InvitationMessage";
 import Addresses from "./components/Addresses";
 import Programme from "./components/Programme";
 import QRCodeSection from "./components/QRCodeSection";
+import QRCodeSection from "./components/GuestQR";
 
 function App() {
   const [invitationOpened, setInvitationOpened] = useState(false);
@@ -129,6 +130,7 @@ function App() {
             <Programme />
             <Event />
             <QRCodeSection />
+            <GuestQR />
             <Gallery />
           </main>
         </>

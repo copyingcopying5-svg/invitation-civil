@@ -68,11 +68,7 @@ function QRCodeSection() {
       setGeneratingPdf(true);
 
       // Données contenues dans le QR code
-      const qrData = JSON.stringify({
-        guest_id: guest.guest_id,
-        nom: guest.nom,
-        table: guest.table,
-      });
+const qrData = `${window.location.origin}/guest/${guest.guest_id}`;
 
       // Génération du QR code en image
       const qrDataUrl = await QRCode.toDataURL(qrData, {
@@ -136,8 +132,8 @@ function QRCodeSection() {
       */
 
       const nameBox = {
-        x: pdfWidth * 0.730,
-        y: pdfHeight * 0.155,
+        x: pdfWidth * 0.735,
+        y: pdfHeight * 0.165,
         width: pdfWidth * 0.16,
         height: pdfHeight * 0.065,
       };
@@ -297,11 +293,7 @@ function QRCodeSection() {
         <div className="flex justify-center mb-6">
           <div className="bg-white p-5 rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.08)]">
             <QRCodeCanvas
-              value={JSON.stringify({
-                guest_id: guest.guest_id,
-                nom: guest.nom,
-                table: guest.table,
-              })}
+value={`${window.location.origin}/guest/${guest.guest_id}`}
               size={220}
               level="H"
               includeMargin
