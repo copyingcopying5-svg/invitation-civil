@@ -36,9 +36,11 @@ function QRCodeSection() {
 
         if (error) {
           console.error("Erreur Supabase :", error);
+
           setErrorMessage(
             "Impossible de récupérer les informations de votre invitation."
           );
+
           setLoading(false);
           return;
         }
@@ -46,6 +48,7 @@ function QRCodeSection() {
         setGuest(data);
       } catch (error) {
         console.error(error);
+
         setErrorMessage(
           "Une erreur est survenue lors du chargement de votre invitation."
         );
@@ -67,21 +70,26 @@ function QRCodeSection() {
     try {
       setGeneratingPdf(true);
 
-      // Données contenues dans le QR code
-      const qrData = JSON.stringify({
-        guest_id: guest.guest_id,
-        nom: guest.nom,
-        table: guest.table,
-      });
+      // --------------------------------------------------
+      // URL QUI SERA ENCODÉE DANS LE QR CODE
+      // --------------------------------------------------
 
-      // Génération du QR code en image
-      const qrDataUrl = await QRCode.toDataURL(qrData, {
+      const scanUrl = `${window.location.origin}/?scan=${guest.guest_id}`;
+
+      // --------------------------------------------------
+      // GÉNÉRATION DU QR CODE
+      // --------------------------------------------------
+
+      const qrDataUrl = await QRCode.toDataURL(scanUrl, {
         width: 800,
         margin: 1,
         errorCorrectionLevel: "H",
       });
 
-      // Chargement de l'image complète de l'invitation
+      // --------------------------------------------------
+      // CHARGEMENT DE L'IMAGE COMPLÈTE DE L'INVITATION
+      // --------------------------------------------------
+
       const invitationImage = new Image();
 
       invitationImage.src = invitationModel;
@@ -98,11 +106,10 @@ function QRCodeSection() {
       const imageWidth = invitationImage.naturalWidth;
       const imageHeight = invitationImage.naturalHeight;
 
-      // Largeur A4 paysage
       const pdfWidth = 297;
 
-      // On conserve exactement le ratio de l'image
-      const pdfHeight = (imageHeight / imageWidth) * pdfWidth;
+      const pdfHeight =
+        (imageHeight / imageWidth) * pdfWidth;
 
       const pdf = new jsPDF({
         orientation: "landscape",
@@ -127,14 +134,6 @@ function QRCodeSection() {
       // POSITION DU NOM DE L'INVITÉ
       // --------------------------------------------------
 
-      /*
-        Ces valeurs correspondent à la partie droite
-        de ton modèle.
-
-        Si nécessaire, nous pourrons ajuster ces valeurs
-        après ton premier test.
-      */
-
       const nameBox = {
         x: pdfWidth * 0.735,
         y: pdfHeight * 0.165,
@@ -142,7 +141,8 @@ function QRCodeSection() {
         height: pdfHeight * 0.065,
       };
 
-      // Fond discret pour masquer "Mr/Mme/Couple"
+      // Fond discret pour masquer
+      // "Mr/Mme/Couple"
       pdf.setFillColor(250, 248, 245);
 
       pdf.roundedRect(
@@ -155,10 +155,13 @@ function QRCodeSection() {
         "F"
       );
 
-      // Nom de l'invité
+      // --------------------------------------------------
+      // NOM DE L'INVITÉ
+      // --------------------------------------------------
+
       pdf.setTextColor(50, 50, 50);
-      pdf.setFont("times", "italic");
-      pdf.setFontSize(13);
+      pdf.setFont("times", "bold");
+      pdf.setFontSize(14);
 
       pdf.text(
         guest.nom,
@@ -278,6 +281,7 @@ function QRCodeSection() {
       <div className="max-w-xl mx-auto text-center">
 
         {/* TITRE */}
+
         <h2 className="text-4xl md:text-5xl font-serif text-gray-800 mb-4">
           Votre invitation
         </h2>
@@ -285,6 +289,7 @@ function QRCodeSection() {
         <div className="w-24 h-[1px] bg-[#A38D87] mx-auto mb-8" />
 
         {/* MESSAGE */}
+
         <p className="text-gray-600 mb-8">
           Bienvenue{" "}
           <span className="font-semibold text-gray-800">
@@ -294,29 +299,30 @@ function QRCodeSection() {
         </p>
 
         {/* QR CODE */}
+
         <div className="flex justify-center mb-6">
           <div className="bg-white p-5 rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.08)]">
+
             <QRCodeCanvas
-              value={JSON.stringify({
-                guest_id: guest.guest_id,
-                nom: guest.nom,
-                table: guest.table,
-              })}
+              value={`${window.location.origin}/?scan=${guest.guest_id}`}
               size={220}
               level="H"
               includeMargin
             />
+
           </div>
         </div>
 
         {/* INFORMATIONS */}
+
         <div className="mb-8">
           <p className="text-xs text-gray-400 mt-5">
-            Ce QR est à présenter au service du protocole avant d'acceder à la salle
+            Ce QR est à présenter au service du protocole avant d'accéder à la salle
           </p>
         </div>
 
         {/* BOUTON PDF */}
+
         <button
           onClick={downloadPDF}
           disabled={generatingPdf}
