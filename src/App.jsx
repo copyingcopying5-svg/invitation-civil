@@ -14,11 +14,17 @@ import InvitationMessage from "./components/InvitationMessage";
 import Addresses from "./components/Addresses";
 import Programme from "./components/Programme";
 import QRCodeSection from "./components/QRCodeSection";
+import ScanGuest from "./components/ScanGuest";
 
 function App() {
   const [invitationOpened, setInvitationOpened] = useState(false);
 
-  const guestName = "Jean-Pierre";
+  const params = new URLSearchParams(window.location.search);
+  const scanGuest = params.get("scan");
+
+  if (scanGuest) {
+    return <ScanGuest />;
+  }
 
   const audioRef = useRef(null);
 
