@@ -5,14 +5,10 @@ import {
   FaBars,
   FaTimes,
   FaHome,
-  FaHeart,
   FaCalendarAlt,
   FaEnvelopeOpenText,
   FaMapMarkerAlt,
-  FaLocationArrow,
-  FaGlassCheers,
   FaTshirt,
-  FaQrcode,
   FaImages,
 } from "react-icons/fa";
 
@@ -36,7 +32,7 @@ function Navigation() {
       icon: <FaCalendarAlt />,
     },
     {
-      label: "Les adresses",
+      label: "Adresses",
       target: "adresses",
       icon: <FaMapMarkerAlt />,
     },
