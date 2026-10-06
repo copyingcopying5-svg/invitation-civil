@@ -332,7 +332,7 @@ function InvitationIntro({ guestName = "Jean-Pierre", onOpen }) {
                   mb-2
                 "
               >
-                S'unissent ce samedi
+                S'unissent ce vendredi
               </p>
 
               <p
@@ -345,7 +345,7 @@ function InvitationIntro({ guestName = "Jean-Pierre", onOpen }) {
                   md:text-5xl
                 "
               >
-                24 Octobre 2026
+                23 Octobre 2026
               </p>
             </motion.div>
 
