@@ -9,7 +9,7 @@ function Addresses() {
       className="
         relative
         overflow-hidden
-        bg-[#F8EDEF]
+        bg-[#FAF8F5]
         px-6
         py-20
         md:py-28
@@ -63,45 +63,6 @@ function Addresses() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          {/* Église */}
-          <div className="flex justify-center mb-2">
-            <FaChurch
-              className="
-                text-[#222222]
-                text-6xl
-                md:text-7xl
-              "
-            />
-          </div>
-
-          {/* Titre */}
-          <div className="leading-none">
-            <h2
-              className="
-                font-['Cormorant_Garamond']
-                text-4xl
-                md:text-5xl
-                font-semibold
-                uppercase
-                tracking-wide
-                text-[#111111]
-              "
-            >
-              BÉNÉDICTION
-            </h2>
-
-            <p
-              className="
-                font-['Allura']
-                text-4xl
-                md:text-5xl
-                text-[#111111]
-                -mt-1
-              "
-            >
-              Nuptiale
-            </p>
-          </div>
 
           {/* Localisation */}
           <div className="mt-7">
@@ -112,20 +73,6 @@ function Addresses() {
                 text-4xl
               "
             />
-
-            <p
-              className="
-                mt-2
-                font-['Poppins']
-                text-xs
-                md:text-sm
-                uppercase
-                tracking-[2px]
-                text-[#222]
-              "
-            >
-              ÉGLISE
-            </p>
 
             <h3
               className="
@@ -138,7 +85,7 @@ function Addresses() {
                 mt-1
               "
             >
-              DISCIPOLAT
+              L.C JARDIN DU BONHEUR
             </h3>
 
             <p
@@ -152,9 +99,11 @@ function Addresses() {
                 mt-1
               "
             >
-              Avenue Tshimanga
+              33B Avenue Rubi coin Ilunga Mpafu
               <br />
-              Golf Météo Faustin
+              Golf Météo 
+              <br />
+              REF : Arret Bus Cabine allant vers Météo
             </p>
 
             <p
@@ -167,7 +116,7 @@ function Addresses() {
                 mt-4
               "
             >
-              13H30
+              12H30
             </p>
           </div>
         </motion.div>
@@ -179,7 +128,7 @@ function Addresses() {
         <div className="h-20 md:h-24" />
 
         {/* ========================= */}
-        {/* SOIRÉE DANSANTE */}
+        {/* PROGRAMME DU MARIAGE CIVIL */}
         {/* ========================= */}
 
         <motion.div
@@ -187,126 +136,340 @@ function Addresses() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
+          className="mt-4"
         >
-          {/* Couple qui danse */}
-          <div className="flex justify-center mb-2">
-            <GiLovers
-              className="
-                text-[#222222]
-                text-7xl
-                md:text-8xl
-              "
-            />
+          {/* TITRE */}
+
+          <h2
+            className="
+              font-['Cormorant_Garamond']
+              text-4xl
+              md:text-5xl
+              font-semibold
+              uppercase
+              text-[#111111]
+              leading-none
+            "
+          >
+            Programme
+          </h2>
+
+          <p
+            className="
+              font-['Allura']
+              text-4xl
+              md:text-5xl
+              text-[#8F7771]
+              -mt-1
+            "
+          >
+            du mariage civil
+          </p>
+
+          {/* PETITE DÉCORATION */}
+
+          <div className="flex items-center justify-center gap-3 my-7">
+            <div className="w-16 h-[1px] bg-[#A98B76]" />
+
+            <span className="text-[#A98B76] text-xl">
+              ♥
+            </span>
+
+            <div className="w-16 h-[1px] bg-[#A98B76]" />
           </div>
 
-          {/* Titre */}
-          <div className="leading-none">
-            <h2
-              className="
-                font-['Cormorant_Garamond']
-                text-4xl
-                md:text-5xl
-                font-semibold
-                uppercase
-                tracking-wide
-                text-[#111111]
-              "
-            >
-              SOIRÉE
-            </h2>
+          {/* ========================= */}
+          {/* 12H30 */}
+          {/* ========================= */}
 
-            <p
+          <div
+            className="
+              flex
+              items-center
+              w-full
+              min-h-[82px]
+              rounded-full
+              border-2
+              border-[#A98B76]
+              bg-[#F5F2EE]
+              overflow-hidden
+              mb-5
+            "
+          >
+            {/* HEURE */}
+
+            <div
               className="
-                font-['Allura']
-                text-4xl
-                md:text-5xl
-                text-[#111111]
-                -mt-1
+                flex
+                items-center
+                justify-center
+                shrink-0
+                w-[90px]
+                h-[70px]
+                ml-1
+                rounded-full
+                bg-[#A98B76]
+                text-white
+                font-['Cormorant_Garamond']
+                text-xl
+                md:text-2xl
+                font-semibold
               "
             >
-              Dansante
-            </p>
+              12H30
+            </div>
+
+            {/* TEXTE */}
+
+            <div
+              className="
+                text-left
+                px-2
+                md:px-4
+                min-w-0
+              "
+            >
+              <p
+                className="
+                  font-['Cormorant_Garamond']
+                  text-base
+                  md:text-lg
+                  font-bold
+                  uppercase
+                  leading-tight
+                  text-[#111111]
+                "
+              >
+                DÉBUT DE LA CÉRÉMONIE CIVIL :
+              </p>
+
+              <p
+                className="
+                  font-['Poppins']
+                  text-[11px]
+                  md:text-xs
+                  text-[#333333]
+                  mt-1
+                "
+              >
+                Entrée des mariés
+              </p>
+            </div>
           </div>
 
-          {/* Localisation */}
-          <div className="mt-7">
-            <FaMapMarkerAlt
-              className="
-                mx-auto
-                text-red-600
-                text-4xl
-              "
-            />
+          {/* ========================= */}
+          {/* 12H45 */}
+          {/* ========================= */}
 
-            <p
-              className="
-                mt-2
-                font-['Poppins']
-                text-xs
-                md:text-sm
-                uppercase
-                tracking-[2px]
-                text-[#222]
-              "
-            >
-              SALLE DE FÊTE
-            </p>
+          <div
+            className="
+              flex
+              items-center
+              w-full
+              min-h-[82px]
+              rounded-full
+              border-2
+              border-[#A98B76]
+              bg-[#F5F2EE]
+              overflow-hidden
+              mb-5
+            "
+          >
+            {/* HEURE */}
 
-            <h3
+            <div
               className="
+                flex
+                items-center
+                justify-center
+                shrink-0
+                w-[90px]
+                h-[70px]
+                ml-1
+                rounded-full
+                bg-[#A98B76]
+                text-white
                 font-['Cormorant_Garamond']
-                text-3xl
-                md:text-4xl
+                text-xl
+                md:text-2xl
                 font-semibold
-                uppercase
-                text-[#111111]
-                mt-1
               "
             >
-              LA SHEKINAH EVENT
-            </h3>
+              12H45
+            </div>
 
-            <p
-              className="
-                font-['Poppins']
-                text-sm
-                md:text-base
-                uppercase
-                leading-7
-                text-[#333333]
-                mt-3
-              "
-            >
-              N°2, CROISEMENT DES AVENUES MUNUA ET DIKUKU
-              <br />
-              Q. GOLF MÉTÉO FAUSTIN
-            </p>
+            {/* TEXTE */}
 
-            <p
+            <div
               className="
-                font-['Poppins']
-                text-sm
-                md:text-base
-                uppercase
-                text-[#333333]
-                mt-2
+                text-left
+                px-2
+                md:px-4
+                min-w-0
               "
             >
-              RÉF : ARRÊT LA KATANGAISE
-            </p>
+              <p
+                className="
+                  font-['Cormorant_Garamond']
+                  text-base
+                  md:text-lg
+                  font-bold
+                  uppercase
+                  leading-tight
+                  text-[#111111]
+                "
+              >
+                ARRIVÉE DE L'OFFICIER DE L'ETAT CIVIL (
+                BOURGMESTRE)
+              </p>
+            </div>
+          </div>
 
-            <p
+          {/* ========================= */}
+          {/* 13H45 */}
+          {/* ========================= */}
+
+          <div
+            className="
+              flex
+              items-center
+              w-full
+              min-h-[82px]
+              rounded-full
+              border-2
+              border-[#A98B76]
+              bg-[#F5F2EE]
+              overflow-hidden
+              mb-5
+            "
+          >
+            {/* HEURE */}
+
+            <div
               className="
-                font-['Poppins']
-                text-2xl
-                md:text-3xl
-                font-bold
-                text-[#111111]
-                mt-4
+                flex
+                items-center
+                justify-center
+                shrink-0
+                w-[90px]
+                h-[70px]
+                ml-1
+                rounded-full
+                bg-[#A98B76]
+                text-white
+                font-['Cormorant_Garamond']
+                text-xl
+                md:text-2xl
+                font-semibold
               "
             >
-              18H00
-            </p>
+              13H45
+            </div>
+
+            {/* TEXTE */}
+
+            <div
+              className="
+                text-left
+                px-2
+                md:px-4
+                min-w-0
+              "
+            >
+              <p
+                className="
+                  font-['Cormorant_Garamond']
+                  text-base
+                  md:text-lg
+                  font-bold
+                  uppercase
+                  leading-tight
+                  text-[#111111]
+                "
+              >
+                FIN DE LA CÉRÉMONIE CIVIL :
+              </p>
+
+              <p
+                className="
+                  font-['Poppins']
+                  text-[11px]
+                  md:text-xs
+                  text-[#333333]
+                  mt-1
+                  leading-tight
+                "
+              >
+                Sortie de l'officier de l'Etat civil
+                (bourgmestre)
+              </p>
+            </div>
+          </div>
+
+          {/* ========================= */}
+          {/* 14H00 */}
+          {/* ========================= */}
+
+          <div
+            className="
+              flex
+              items-center
+              w-full
+              min-h-[82px]
+              rounded-full
+              border-2
+              border-[#A98B76]
+              bg-[#F5F2EE]
+              overflow-hidden
+            "
+          >
+            {/* HEURE */}
+
+            <div
+              className="
+                flex
+                items-center
+                justify-center
+                shrink-0
+                w-[90px]
+                h-[70px]
+                ml-1
+                rounded-full
+                bg-[#A98B76]
+                text-white
+                font-['Cormorant_Garamond']
+                text-xl
+                md:text-2xl
+                font-semibold
+              "
+            >
+              14H00
+            </div>
+
+            {/* TEXTE */}
+
+            <div
+              className="
+                text-left
+                px-2
+                md:px-4
+                min-w-0
+              "
+            >
+              <p
+                className="
+                  font-['Cormorant_Garamond']
+                  text-base
+                  md:text-lg
+                  font-bold
+                  uppercase
+                  leading-tight
+                  text-[#111111]
+                "
+              >
+                COCKTAIL & SÉANCE PHOTO
+              </p>
+            </div>
           </div>
         </motion.div>
 

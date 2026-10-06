@@ -26,9 +26,9 @@ function Navigation() {
       icon: <FaHome />,
     },
     {
-      label: "Notre histoire",
-      target: "histoire",
-      icon: <FaHeart />,
+      label: "Notre invitation",
+      target: "invitation",
+      icon: <FaEnvelopeOpenText />,
     },
     {
       label: "La date",
@@ -36,34 +36,14 @@ function Navigation() {
       icon: <FaCalendarAlt />,
     },
     {
-      label: "Notre invitation",
-      target: "invitation",
-      icon: <FaEnvelopeOpenText />,
-    },
-    {
       label: "Les adresses",
       target: "adresses",
       icon: <FaMapMarkerAlt />,
     },
     {
-      label: "Localisation",
-      target: "lieux",
-      icon: <FaLocationArrow />,
-    },
-    {
-      label: "Programme",
-      target: "programme",
-      icon: <FaGlassCheers />,
-    },
-    {
-      label: "Événement",
+      label: "Dress Code",
       target: "dress-code",
       icon: <FaTshirt />,
-    },
-    {
-      label: "Mon invitation",
-      target: "qr-code",
-      icon: <FaQrcode />,
     },
     {
       label: "Galerie",

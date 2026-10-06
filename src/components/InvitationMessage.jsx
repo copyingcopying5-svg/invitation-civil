@@ -121,7 +121,7 @@ function InvitationMessage() {
             "
           >
             Venez vivre à nos côtés ces précieux instants de joie,
-            d'amour et de célébration.
+            d'amour et de célébration de notre mariage civil.
           </p>
 
         </motion.div>

@@ -122,7 +122,7 @@ function Calendar() {
                   md:h-16
                 "
               >
-                {day === "24" ? (
+                {day === "23" ? (
                   <span
                     className="
                       flex
@@ -142,7 +142,7 @@ function Calendar() {
                       shadow-[0_5px_15px_rgba(185,130,69,0.25)]
                     "
                   >
-                    24
+                    23
                   </span>
                 ) : (
                   <span

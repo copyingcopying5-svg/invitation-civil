@@ -5,15 +5,11 @@ import { supabase } from "./lib/supabase";
 import Navigation from "./components/Navigation";
 import InvitationIntro from "./components/InvitationIntro";
 import Hero from "./components/Hero";
-import Story from "./components/Story";
 import Event from "./components/Event";
-import Location from "./components/Location";
 import Gallery from "./components/Gallery";
 import Calendar from "./components/Calendar";
 import InvitationMessage from "./components/InvitationMessage";
 import Addresses from "./components/Addresses";
-import Programme from "./components/Programme";
-import QRCodeSection from "./components/QRCodeSection";
 import ScanGuest from "./components/ScanGuest";
 
 function App() {
@@ -219,21 +215,14 @@ function App() {
           <main>
             <Hero />
 
-            <Story />
+            <InvitationMessage />
 
             <Calendar />
 
-            <InvitationMessage />
 
             <Addresses />
 
-            <Location />
-
-            <Programme />
-
             <Event />
-
-            <QRCodeSection />
 
             <Gallery />
           </main>
