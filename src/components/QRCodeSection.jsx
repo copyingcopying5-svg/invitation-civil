@@ -298,26 +298,11 @@ function QRCodeSection() {
           .
         </p>
 
-        {/* QR CODE */}
-
-        <div className="flex justify-center mb-6">
-          <div className="bg-white p-5 rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.08)]">
-
-            <QRCodeCanvas
-              value={`${window.location.origin}/?scan=${guest.guest_id}`}
-              size={220}
-              level="H"
-              includeMargin
-            />
-
-          </div>
-        </div>
-
         {/* INFORMATIONS */}
 
         <div className="mb-8">
-          <p className="text-xs text-gray-400 mt-5">
-            Ce QR est à présenter au service du protocole avant d'accéder à la salle
+          <p className="text-xl text-gray-400 mt-5">
+            Téléchargez votre invitation PDF pour l'avoir toujours à portée de main.
           </p>
         </div>
 

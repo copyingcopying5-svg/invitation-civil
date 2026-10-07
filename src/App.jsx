@@ -10,6 +10,7 @@ import Gallery from "./components/Gallery";
 import Calendar from "./components/Calendar";
 import InvitationMessage from "./components/InvitationMessage";
 import Addresses from "./components/Addresses";
+import QRCodeSection from "./components/QRCodeSection";
 import ScanGuest from "./components/ScanGuest";
 
 function App() {
@@ -223,6 +224,8 @@ function App() {
             <Addresses />
 
             <Event />
+
+            <QRCodeSection />
 
             <Gallery />
           </main>

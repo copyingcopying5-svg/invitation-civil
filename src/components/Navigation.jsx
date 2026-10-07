@@ -42,6 +42,11 @@ function Navigation() {
       icon: <FaTshirt />,
     },
     {
+      label: "Votre invitation",
+      target: "qr-code",
+      icon: <FaEnvelopeOpenText />,
+    },
+    {
       label: "Galerie",
       target: "galerie",
       icon: <FaImages />,
