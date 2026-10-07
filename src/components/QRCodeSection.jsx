@@ -174,38 +174,6 @@ function QRCodeSection() {
       );
 
       // --------------------------------------------------
-      // QR CODE
-      // --------------------------------------------------
-
-      const qrSize = pdfWidth * 0.095;
-
-      const qrX = pdfWidth * 0.846;
-      const qrY = pdfHeight * 0.725;
-
-      // Petit fond pour couvrir l'ancien QR
-      pdf.setFillColor(250, 248, 245);
-
-      pdf.roundedRect(
-        qrX - 2,
-        qrY - 2,
-        qrSize + 4,
-        qrSize + 4,
-        2,
-        2,
-        "F"
-      );
-
-      // Nouveau QR personnalisé
-      pdf.addImage(
-        qrDataUrl,
-        "PNG",
-        qrX,
-        qrY,
-        qrSize,
-        qrSize
-      );
-
-      // --------------------------------------------------
       // NOM DU FICHIER
       // --------------------------------------------------
 
